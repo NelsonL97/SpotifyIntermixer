@@ -141,5 +141,17 @@ app.get('/refresh_token', function(req, res) {
   });
 });
 
+app.get('/playlists', function(req, res) {
+
+  var access_token = body.access_token;
+
+  var playlsits = {
+    url: 'https://api.spotify.com/v1/me',
+    headers: { 'Authorization': 'Bearer ' + access_token },
+    json: true
+  };
+
+});
+
 console.log('Listening on 8888');
 app.listen(8888);
